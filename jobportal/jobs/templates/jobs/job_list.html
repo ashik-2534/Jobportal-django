@@ -9,7 +9,7 @@
     <h1>Available jobs</h1>
     <ul>
         {%for job in jobs%}
-        <li><a href="{% url 'job_details' job_id=job.id%}">{{job.title}}</a> at {{job.location}}</li>
+        <li><a href="{% url 'job_details' job_id=job.id %}">{{job.title}}</a> at {{job.location}}</li>
         {%endfor%}
     </ul>
 </body>

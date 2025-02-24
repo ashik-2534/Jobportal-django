@@ -11,7 +11,7 @@ def job_list(request):
 
 def job_details(request, job_id):
     job = get_object_or_404(Job, pk=job_id)
-    return render(request, 'jobs/job_details.html',{
+    return render(request, 'jobs/job_detail.html',{
         'job': job
     })
 
@@ -22,6 +22,7 @@ def apply_job(request, job_id):
         if form.is_valid():
             application = form.save(commit=False)
             application.job = job
+            application.save()
             return redirect('job_details', job_id=job.id)
     else:
         form = ApplicationForm()
