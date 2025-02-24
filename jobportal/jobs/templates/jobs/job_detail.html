@@ -11,6 +11,6 @@
     <p>Salary: {{job.salary}}</p>
     <p>Description: {{job.description}}</p>
     <p>Post date: {{job.post_date}}</p>
-    <a href="% url 'apply_job' job_id=job.id%">Apply Now</a>
+    <a href="{% url 'apply_job' job_id=job.id%}">Apply Now</a>
 </body>
 </html>
