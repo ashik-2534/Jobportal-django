@@ -9,4 +9,4 @@ class Job(models.Model):
     post_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.tittle
+        return self.title
