@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Job</title>
+</head>
+<body>
+    <h1>Apply for {{job.title}}</h1>
+    <form method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">Submit Application</button>
+    </form>
+    <a href="% url 'job_details' job_id=job.id %">Back to Job Detail</a>
+</body>
+</html>
