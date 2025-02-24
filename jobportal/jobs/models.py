@@ -10,3 +10,14 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class JobApplication(models.Model):
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    cover_letter = models.TextField()
+    subbited_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} applied for {self.job.title}"
